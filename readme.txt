@@ -57,6 +57,9 @@ Make sure to connect your Instagram account with the plugin. You can do that in 
 
 == Changelog ==
 
+= 1.3.1 =
+* Minor bug fix with a caching issue
+
 = 1.3.0 =
 * Added new option: Display User Details
 * Added new option: Display User Bio
