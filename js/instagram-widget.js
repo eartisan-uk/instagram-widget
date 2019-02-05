@@ -5,7 +5,7 @@ jQuery(function($) {
         return $(this).each(function () {
             var $list = $(this);
 
-            var minItemsPerRow   = $list.data('images-per-row');
+            var minItemsPerRow   = $list.data((window.matchMedia("only screen and (max-width: 760px)").matches ? 'mobile-' : '') + 'images-per-row');
             var desiredItemWidth = $list.data('image-width');
             var itemSpacing      = $list.data('image-spacing');
 

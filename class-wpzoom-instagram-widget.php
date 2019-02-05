@@ -30,6 +30,7 @@ class Wpzoom_Instagram_Widget extends WP_Widget {
             'show-user-info'                => false,
 			'show-user-bio'                 => false,
 			'images-per-row'                => 3,
+			'mobile-images-per-row'         => 2,
 			'image-width'                   => 120,
 			'image-spacing'                 => 10,
 			'image-resolution'              => 'default_algorithm',
@@ -128,6 +129,7 @@ class Wpzoom_Instagram_Widget extends WP_Widget {
 		$instance['image-limit'] = ( 0 !== (int) $new_instance['image-limit'] ) ? (int) $new_instance['image-limit'] : null;
 
 		$instance['images-per-row'] = ( 0 !== (int) $new_instance['images-per-row'] ) ? (int) $new_instance['images-per-row'] : null;
+		$instance['mobile-images-per-row'] = ( 0 !== (int) $new_instance['mobile-images-per-row'] ) ? (int) $new_instance['mobile-images-per-row'] : null;
 		$instance['image-width'] = ( 0 !== (int) $new_instance['image-width'] ) ? (int) $new_instance['image-width'] : null;
 		$instance['image-spacing'] = ( 0 <= (int) $new_instance['image-spacing'] ) ? (int) $new_instance['image-spacing'] : null;
 		$instance['image-resolution'] = !empty($new_instance['image-resolution']) ?  $new_instance['image-resolution'] : $this->defaults['image-resolution'];
@@ -180,6 +182,11 @@ class Wpzoom_Instagram_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'images-per-row' ); ?>"><?php esc_html_e( 'Desired number of Images per row:', 'wpzoom-instagram-widget' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'images-per-row' ); ?>" name="<?php echo $this->get_field_name( 'images-per-row' ); ?>" type="number" min="1" max="20" value="<?php echo esc_attr( $instance['images-per-row'] ); ?>"/>
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'mobile-images-per-row' ); ?>"><?php _e( 'Desired number of Images per row <strong>on mobile devices</strong>:', 'wpzoom-instagram-widget' ); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'mobile-images-per-row' ); ?>" name="<?php echo $this->get_field_name( 'mobile-images-per-row' ); ?>" type="number" min="1" max="20" value="<?php echo esc_attr( $instance['mobile-images-per-row'] ); ?>"/>
 		</p>
 
 		<p>
@@ -257,6 +264,7 @@ class Wpzoom_Instagram_Widget extends WP_Widget {
 		?>
 		<ul class="zoom-instagram-widget__items zoom-instagram-widget__items--no-js"
 		    data-images-per-row="<?php echo esc_attr( $instance['images-per-row'] ); ?>"
+		    data-mobile-images-per-row="<?php echo esc_attr( $instance['mobile-images-per-row'] ); ?>"
 		    data-image-width="<?php echo esc_attr( $instance['image-width'] ); ?>"
 			data-image-spacing="<?php echo esc_attr( $instance['image-spacing'] ); ?>">
 
