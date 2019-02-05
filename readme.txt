@@ -57,6 +57,9 @@ Make sure to connect your Instagram account with the plugin. You can do that in 
 
 == Changelog ==
 
+= 1.3.2 =
+* Added an option to set a different amount of images per row on mobile devices
+
 = 1.3.1 =
 * Minor bug fix with a caching issue
 
